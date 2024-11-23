@@ -92,7 +92,7 @@ class Mirror(object):
             local_repo.create_remote(self.hub.dst_type, self.dst_url)
         cmd = [
             self.hub.dst_type, 'refs/remotes/origin/*:refs/heads/*',
-            '--tags', '--prune'
+            '--tags'
         ]
         if not self.force_update:
             print("(3/3) Pushing...")
