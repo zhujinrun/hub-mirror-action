@@ -103,5 +103,5 @@ class Mirror(object):
             print("(3/3) Force pushing...")
             if self.lfs:
                 git_cmd.lfs("push", self.hub.dst_type, "--all")
-            cmd = ['-f'] + cmd
+            cmd = ['-f'] + cmd + ['--prune']
             local_repo.git.push(*cmd, kill_after_timeout=self.timeout)
